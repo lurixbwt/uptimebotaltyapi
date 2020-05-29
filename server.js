@@ -13,6 +13,7 @@ app.listen(process.env.PORT);
 
 //KOMUT Algılayıcı______________________________________________________________
 client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
 fs.readdir("./komutlar/", (err, files) => {
   if (err) return console.error(err);
@@ -20,8 +21,13 @@ fs.readdir("./komutlar/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let cmd = require(`./komutlar/${file}`);
     let cmdFileName = file.split(".")[0];
-    console.log(`Komut Yükleme Çalışıyor: ${cmdFileName}`);
     client.commands.set(cmd.help.name, cmd);
+    console.log(`Komut Yükleme Çalışıyor: ${cmdFileName}`);
+    if (cmd.help.aliases) {
+      cmd.help.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+    };
   });
 });
 

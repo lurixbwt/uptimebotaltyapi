@@ -52,5 +52,6 @@ exports.help = {
   name: "istatistik",
   guildOnly: true,
   perms: ['MANAGE_MESSAGE'],
+  enabled: true,
   aliases: ['i']
 };

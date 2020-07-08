@@ -12,7 +12,7 @@ module.exports = (client, message) => {
   let cmd = client.commands.get(command.slice(prefix.length)) || client.commands.get(client.aliases.get(command.slice(prefix.length)));
   
   if (cmd.help.guildOnly && message.channel.type == "dm") return;
-  if (!cmd.enabled) return message.channel.send('Kullanmaya çalıştığınız komut şu an da kullanıma kapalıdır.');
+  if (!cmd.help.enabled) return message.channel.send('Kullanmaya çalıştığınız komut şu an da kullanıma kapalıdır.');
   if (!message.member.hasPermission(cmd.perms)) return message.channel.send(`Eksik Yetki(ler): ${cmd.perms.join(', ')}`);
   if (cmd) cmd.run(client, message, args);
 };

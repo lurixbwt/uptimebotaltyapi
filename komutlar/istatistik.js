@@ -50,6 +50,7 @@ exports.run = async (client, message, args) => {
 
 exports.help = {
   name: "istatistik",
-  guildOnly: true, // false olur ise DM'den de kullanılabilir bi hal alır | true olur ise sadece sunucuda kullanılabilir bir halde olur
+  guildOnly: true,
+  perms: ['MANAGE_MESSAGE'],
   aliases: ['i']
 };

@@ -8,8 +8,10 @@ module.exports = (client, message) => {
   const args = msgArr.slice(1);
 
   if (!command.startsWith(prefix)) return;
-
+  
   let cmd = client.commands.get(command.slice(prefix.length)) || client.commands.get(client.aliases.get(command.slice(prefix.length)));
-  if (cmd.help.guildOnly && message.channel.type == "dm") return;
+  
+  if (cmd.help.guildOnly && message.channel.type == "dm") return
+  if (!message.member.hasPermission(cmd.perms)) return message.channel.send(`Eksik Yetki(ler): ${cmd.perms.join(', ')}`);
   if (cmd) cmd.run(client, message, args);
 };

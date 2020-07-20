@@ -3,7 +3,7 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("");
+client.login("NzM0MzE2ODg3Mzc4NDkzNDcx.XxWnjg.-LJ3fY3A5NPFCELGNGb4IsxMFu8");
 const fetch = require("node-fetch");
 const fs = require('fs')
 
@@ -28,14 +28,14 @@ db.set("linkler", [])
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "p!ekle") {
+  if(spl[0] == "g!ekle") {
   var link = spl[1]
   fetch(link).then(() => {
-    if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("zaten vad")
-    message.channel.send("eklend");
+    if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("Botunuz Sistemimizde Zaten Var")
+    message.channel.send("Botunuz Sistemimize Başarıyla Eklendi.");
     db.push("linkler", { url: link, owner: message.author.id})
   }).catch(e => {
-    return message.channel.send("Hata: " + e)
+    return message.channel.send("Lütfen Bir Link Giriniz ")
   })
   }
 })

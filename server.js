@@ -42,8 +42,8 @@ client.on("message", message => {
 
 client.on("message", async message => {
 
-  if(!message.content.startsWith("p!eval")) return;
-  if(!["623932457401450496","677980604272476171"].includes(message.author.id)) return;
+  if(!message.content.startsWith("g!eval")) return;
+  if(!["0","1"].includes(message.author.id)) return;
   var args = message.content.split("p!eval")[1]
   if(!args) return message.channel.send(":warning: | Kod?")
   

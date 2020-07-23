@@ -3,7 +3,7 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("");
+client.login("NzM1ODk4MjE2NjgzNTM2NDQ2.Xxm8vA.M3Jb3k9XzAoTLGVt7A1Q6p2QQ4c");
 const fetch = require("node-fetch");
 const fs = require('fs')
 
@@ -28,7 +28,7 @@ db.set("linkler", [])
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "g!ekle") {
+  if(spl[0] == "!site-ekle") {
   var link = spl[1]
   fetch(link).then(() => {
     if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("Botunuz Sistemimizde Zaten Var")
@@ -42,9 +42,9 @@ client.on("message", message => {
 
 client.on("message", async message => {
 
-  if(!message.content.startsWith("g!eval")) return;
+  if(!message.content.startsWith("!crawlozeleval")) return;
   if(!["0","1"].includes(message.author.id)) return;
-  var args = message.content.split("p!eval")[1]
+  var args = message.content.split("!eval")[1]
   if(!args) return message.channel.send(":warning: | Kod?")
   
       const code = args

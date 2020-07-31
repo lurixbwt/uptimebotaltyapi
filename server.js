@@ -3,9 +3,35 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("NzM1ODk4MjE2NjgzNTM2NDQ2.Xxm8vA.M3Jb3k9XzAoTLGVt7A1Q6p2QQ4c");
+client.login("NzM4NzgzOTIyODU0NTU5NzY2.XyQ8JQ.K1aE6ZntpQplftvA-xgIYtFH37w");
 const fetch = require("node-fetch");
 const fs = require('fs')
+
+//Uptime 
+
+const express = require('express');
+const app = express();
+const http = require('http');
+    app.get("/", (request, response) => {
+    console.log(` az önce pinglenmedi. Sonra ponglanmadı... ya da başka bir şeyler olmadı.`);
+    response.sendStatus(200);
+    });
+    app.listen(process.env.PORT);
+    setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    }, 280000);
+
+//Oynuyor
+
+client.on("ready", () => {
+
+    console.log("Bot çalışıyor"); //If the bot is ready it sends a message in the console
+    //It will count all voice channels in which bot is connected, if none it will return 0
+    let playing = client.voice.connections.size; 
+    //It will set the bot status to streaming
+    client.user.setPresence({ activity: { name: `https://discord.gg/EKjSRYn`, type: "STREAMING", url: "https://discord.gg/EKjSRYn" } })
+
+});
 
 setInterval(() => {
   var links = db.get("linkler");
@@ -28,7 +54,7 @@ db.set("linkler", [])
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "!site-ekle") {
+  if(spl[0] == "&site-ekle") {
   var link = spl[1]
   fetch(link).then(() => {
     if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("Botunuz Sistemimizde Zaten Var")

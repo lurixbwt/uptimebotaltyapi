@@ -33,6 +33,8 @@ client.on("ready", () => {
 
 });
 
+
+
 setInterval(() => {
   var links = db.get("linkler");
   if(!links) return;

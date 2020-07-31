@@ -1,1 +1,0 @@
-Bu Altyapıyı Aldığına Göre Kuzu Sana Vermiş Hll olsun [tıkla](https://discord.com/oauth2/authorize?client_id=715559265477329016&scope=bot&permissions=8)

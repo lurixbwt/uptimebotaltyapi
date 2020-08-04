@@ -56,7 +56,7 @@ db.set("linkler", [])
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "!!ekle") {
+  if(spl[0] == "&ekle") {
   var link = spl[1]
   fetch(link).then(() => {
     if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("Botunuz Sistemimizde Zaten Var")
@@ -90,6 +90,7 @@ let embed = new Discord.RichEmbed()
 .addField(`Genel Komutlar`,`
 
 \`&yardım\` - Yardım menüsünü görüntüler.
+\`.ekle\` - Botunuzu sisteme ekler ve 7/24 yapar.
 \`.göster\` - Sistemdeki bağlantı sayısını gösterir.
 `)
 .addField(`Links`, `[Uptime]()

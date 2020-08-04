@@ -56,7 +56,7 @@ db.set("linkler", [])
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "&site-ekle") {
+  if(spl[0] == "!!ekle") {
   var link = spl[1]
   fetch(link).then(() => {
     if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("Botunuz Sistemimizde Zaten Var")
@@ -66,6 +66,40 @@ client.on("message", message => {
     return message.channel.send("Lütfen Bir Link Giriniz ")
   })
   }
+})
+
+
+client.on("message", message => {
+  if(message.author.bot) return;
+  var spl = message.content.split(" ");
+  if(spl[0] == "&göster") {
+  var link = spl[1]
+ message.channel.send(`${db.get("linkler").length} Bot / ${client.guilds.size} Sunucu`)
+}})
+
+
+const Discord = require('discord.js');
+
+client.on("message", message => {
+  if(message.author.bot) return;
+    var spl = message.content.split(" ");
+  if(spl[0] == "&yardım") {
+let embed = new Discord.RichEmbed()
+.setColor('#4ca74c')
+.addField(`Uptime Bot v1.0 Yardım`, `Bot aksaklık sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır.`)
+.addField(`Genel Komutlar`,`
+
+\`&yardım\` - Yardım menüsünü görüntüler.
+\`.göster\` - Sistemdeki bağlantı sayısını gösterir.
+`)
+.addField(`Links`, `[Uptime]()
+[Destek Sunucusu](hhttps://discord.gg/EKjSRYn)`)
+.setThumbnail(client.user.avatarURL)
+.setAuthor(`Uptime`, client.user.avatarURL)
+.setFooter(`2020 © Legends Never Die Uptime`, client.user.avatarURL)
+return message.channel.send(embed);
+    }
+ 
 })
 
 client.on("message", async message => {

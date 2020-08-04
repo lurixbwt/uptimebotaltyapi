@@ -78,31 +78,6 @@ client.on("message", message => {
 }})
 
 
-const Discord = require('discord.js');
-
-client.on("message", message => {
-  if(message.author.bot) return;
-    var spl = message.content.split(" ");
-  if(spl[0] == "&yardım") {
-let embed = new Discord.RichEmbed()
-.setColor('#4ca74c')
-.addField(`Uptime Bot v1.0 Yardım`, `Bot aksaklık sitelerinin 7/24 açık kalmasını sağlayan bir sistem içerir. Sistemdeki bağlantılar bakım gerektirmeden 7/24 çalışır.`)
-.addField(`Genel Komutlar`,`
-
-\`&yardım\` - Yardım menüsünü görüntüler.
-\`.ekle\` - Botunuzu sisteme ekler ve 7/24 yapar.
-\`.göster\` - Sistemdeki bağlantı sayısını gösterir.
-`)
-.addField(`Links`, `[Uptime]()
-[Destek Sunucusu](hhttps://discord.gg/EKjSRYn)`)
-.setThumbnail(client.user.avatarURL)
-.setAuthor(`Uptime`, client.user.avatarURL)
-.setFooter(`2020 © Legends Never Die Uptime`, client.user.avatarURL)
-return message.channel.send(embed);
-    }
- 
-})
-
 client.on("message", async message => {
 
   if(!message.content.startsWith("!crawlozeleval")) return;

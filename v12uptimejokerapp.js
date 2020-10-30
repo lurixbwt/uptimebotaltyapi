@@ -3,7 +3,7 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("NzQwNDQ1NDM5OTE1OTgyOTI4.XypHjQ.eTiHf58UW-KkGnfvAnFo0iPD5GE");
+client.login("NzcxMzk0NzAyOTM0Mjc4MTg1.X5rfTQ.5JE9u62bhKTJESeSC3ZPZbmqXD8");
 const fetch = require("node-fetch");
 const fs = require('fs')
 
@@ -25,11 +25,10 @@ const http = require('http');
 
 client.on("ready", () => {
 
-    console.log("Bot çalışıyor"); //If the bot is ready it sends a message in the console
-    //It will count all voice channels in which bot is connected, if none it will return 0
+    console.log("Bot çalışıyor");
     let playing = client.voice.connections.size; 
-    //It will set the bot status to streaming
-    client.user.setPresence({ activity: { name: `https://discord.gg/BeB7kwG`, type: "STREAMING", url: "https://discord.gg/BeB7kwG" } })
+
+    client.user.setPresence({ activity: { name: `Jokerapp V12 Uptime Botu`, type: "STREAMING", url: "TWİTCH URL" } })
 
 });
 
@@ -56,7 +55,7 @@ db.set("linkler", [])
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "?ekle") {
+  if(spl[0] == "!ekle") {
   var link = spl[1]
   fetch(link).then(() => {
     if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("Botunuz Sistemimizde Zaten Var")
@@ -72,16 +71,16 @@ client.on("message", message => {
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "?göster") {
+  if(spl[0] == "!göster") {
   var link = spl[1]
- message.channel.send(`${db.get("linkler").length} Bot / ${client.guilds.size} Sunucu`)
+ message.channel.send(`${db.get("linkler").length} Bot Aktif Tutuluyor!`)
 }})
 
 
 client.on("message", async message => {
 
-  if(!message.content.startsWith("!crawlozeleval")) return;
-  if(!["0","1"].includes(message.author.id)) return;
+  if(!message.content.startsWith("!eval")) return;
+  if(!["IDNIZ","1"].includes(message.author.id)) return;
   var args = message.content.split("!eval")[1]
   if(!args) return message.channel.send(":warning: | Kod?")
   

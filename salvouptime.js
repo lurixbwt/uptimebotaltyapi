@@ -3,7 +3,7 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("TOKEN");
+client.login("NzQxMjg5OTM1MDkyMzE4Mzk5.Xy1aDQ.oNKU4tSBWRet_DCu91eTeQQ-34o");
 const fetch = require("node-fetch");
 const fs = require("fs");
 
@@ -95,9 +95,9 @@ client.on("message", message => {
     var link = spl[1];
     message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription(`**SALVO CODE UPTİME BOTU**
 
-**!ekle** <URL> = Projenizi Uptime Edersiniz
+**!ekle** <URL> = \`Projenizi Uptime Edersiniz\`
 
-**!göster** = Kaç Projenin Aktif Tutulduğunu Gösterir`));
+**!göster** = \`Kaç Projenin Aktif Tutulduğunu Gösterir\``));
   }
 });
 

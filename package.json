@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node v12rollsıv.js"
+    "start": "node salvouptime.js"
   },
   "dependencies": {
     "express": "^4.17.1",

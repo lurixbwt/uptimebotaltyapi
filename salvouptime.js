@@ -3,11 +3,11 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("Botun Tokeni");
+client.login("TOKEN");
 const fetch = require("node-fetch");
 const fs = require("fs");
 
-//Uptime
+//UPTİME
 
 const express = require("express");
 const app = express();
@@ -21,17 +21,17 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
 
-//Oynuyor
+//OYNUYOR KISMI
 
 client.on("ready", () => {
-  console.log("Bot çalışıyor");
+  console.log("Bot Aktif");
   let playing = client.voice.connections.size;
 
   client.user.setPresence({
     activity: {
-      name: "RollsIV UPTİME BOTU V12",
-      type: "STREAMING",
-      url: "TWİTCH URL"
+      name: "Salvo Code - v12 Uptime Botu",
+      type: "PLAYING",
+      url: "URL"
     }
   });
 });
@@ -69,12 +69,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-          return message.channel.send("Botunuz Sistemimizde Zaten Var");
-        message.channel.send("Botunuz Sistemimize Başarıyla Eklendi.");
+          return message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send("Lütfen Bir Link Giriniz ");
+        return message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });
@@ -84,6 +84,25 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!göster") {
     var link = spl[1];
-    message.channel.send(`${db.get("linkler").length} Bot Aktif Tutuluyor!`);
+    message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
 });
+
+client.on("message", message => {
+  if (message.author.bot) return;
+  var spl = message.content.split(" ");
+  if (spl[0] == "!yardım") {
+    var link = spl[1];
+    message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription(`**SALVO CODE UPTİME BOTU**
+
+**!ekle** <URL> = Projenizi Uptime Edersiniz
+
+**!göster** = Kaç Projenin Aktif Tutulduğunu Gösterir`));
+  }
+});
+
+//SAFE CODE ❤ #1.5K
+
+//SALVO CODE ❤ #1.6K
+
+//GÜLE GÜLE KULLAN DOSTUM :) ❤ 

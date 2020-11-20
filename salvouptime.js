@@ -101,8 +101,8 @@ client.on("message", message => {
   }
 });
 
-//SAFE CODE ❤ #1.5K
+//SAFE CODE ❤ #1.8K
 
-//SALVO CODE ❤ #1.6K
+//SALVO CODE ❤ #1.8K
 
 //GÜLE GÜLE KULLAN DOSTUM :) ❤ 

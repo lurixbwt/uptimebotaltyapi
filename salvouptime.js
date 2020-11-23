@@ -28,7 +28,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "Salvo Code - v12 Uptime Botu",
+      name: "PLASMICİ",
       type: "PLAYING",
       url: "URL"
     }
@@ -68,12 +68,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-          return message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+          return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });
@@ -83,7 +83,7 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!göster") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
+    message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
 });
 
@@ -92,16 +92,10 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!yardım") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Salvo Code - Safe Code").setColor("RANDOM").setDescription(`**SALVO CODE UPTİME BOTU**
+    message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription(`**SALVO CODE UPTİME BOTU**
 
 **!ekle** <URL> = \`Projenizi Uptime Edersiniz\`
 
 **!göster** = \`Kaç Projenin Aktif Tutulduğunu Gösterir\``));
   }
 });
-
-//SAFE CODE ❤ #1.8K
-
-//SALVO CODE ❤ #1.8K
-
-//GÜLE GÜLE KULLAN DOSTUM :) ❤ 

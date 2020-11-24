@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("TOKEN");
+client.login("NzgwNjc5NzMwMDI2MTE5MjA5.X7ympw.LK5SNRrEI9VHe_cw509trMb2Cdg");
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -55,6 +55,20 @@ client.on("ready", () => {
   }
 });
 
+//embed hazırlıkları
+
+const help = new discord.MessageEmbed()
+.setFooter("plasmic uptime yardımcısı")
+.setColor("RED")
+.setThumbnail('https://agenda.infn.it/event/20813/images/6201-giphy.gif');
+
+
+
+
+
+
+
+
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
@@ -68,7 +82,7 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-          return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Projeniz Sistemimizde Zaten Var"));
+          return message.channel.send(help);
         message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })

@@ -58,7 +58,7 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-.setFooter("plasmic uptime yardımcısı")
+.setFooter("TAKMA MAKMA uptime yardımcısı")
 .setColor("RED")
 .setThumbnail('https://i.imgur.com/4M7IWwP.gif')
 .setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [glitch linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `)
@@ -83,12 +83,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-             return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+             return message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });
@@ -98,7 +98,7 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!göster") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
+    message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA-uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
 });
 

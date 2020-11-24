@@ -60,7 +60,8 @@ client.on("ready", () => {
 const help = new discord.MessageEmbed()
 .setFooter("plasmic uptime yardımcısı")
 .setColor("RED")
-.setThumbnail('https://agenda.infn.it/event/20813/images/6201-giphy.gif');
+.setThumbnail('https://i.imgur.com/4M7IWwP.gif')
+.setDescription(`Selamlar ` + `{user.mention}`)
 
 
 
@@ -82,7 +83,7 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-          return message.channel.send(help);
+             return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Projeniz Sistemimizde Zaten Var"));
         message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
@@ -106,10 +107,6 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!yardım") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RANDOM").setDescription(`**SALVO CODE UPTİME BOTU**
-
-**!ekle** <URL> = \`Projenizi Uptime Edersiniz\`
-
-**!göster** = \`Kaç Projenin Aktif Tutulduğunu Gösterir\``));
+    message.channel.send(help);
   }
 });

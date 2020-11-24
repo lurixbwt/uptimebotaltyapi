@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("NzgwNjc5NzMwMDI2MTE5MjA5.X7ympw.LK5SNRrEI9VHe_cw509trMb2Cdg");
+client.login("NzgwNzc0NzMwMDQ2NTA0OTYz.X7z_IQ.lKfeDPDEjDpAlGAbdwFrs-9ZxYg");
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -29,7 +29,7 @@ client.on("ready", () => {
   client.user.setPresence({
     activity: {
       name: "PLASMICİ",
-      type: "PLAYING",
+      type: "WATCHING",
       url: "URL"
     }
   });

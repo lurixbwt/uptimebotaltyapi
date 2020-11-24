@@ -30,7 +30,7 @@ client.on("ready", () => {
     activity: {
       name: "TAKMA MAKMA",
       type: "WATCHING",
-      url: "URL"
+      url: "https://www.twitch.tv/takma_makma"
     }
   });
 });

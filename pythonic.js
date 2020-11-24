@@ -28,7 +28,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "PLASMICİ",
+      name: "TAKMA MAKMA",
       type: "WATCHING",
       url: "URL"
     }

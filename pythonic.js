@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("TOKEN GELCEK");//tokeni buraya yazınız YOKSA ÇALIŞMAZ
+client.login("NzgxMDgzNjEwNjg1Mzc0NDc0.X74ezA.J8e3TeMOB-yiciwTNX5b_qY3IPM");//tokeni buraya yazınız YOKSA ÇALIŞMAZ
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -28,9 +28,9 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "TAKMA MAKMA",
+      name: "shinne",
       type: "WATCHING",
-      url: "https://www.twitch.tv/takma_makma"
+      url: "https://www.youtube.com/channel/UCapA9bMeL9w7tDO8J3HHhNw?view_as=subscriber"
     }
   });
 });
@@ -58,7 +58,7 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-.setFooter("TAKMA MAKMA uptime yardımcısı")
+.setFooter("shinne uptime yardımcısı")
 .setColor("RED")
 .setThumbnail('https://i.imgur.com/4M7IWwP.gif')
 .setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [glitch linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `)
@@ -83,12 +83,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-             return message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+             return message.channel.send(new discord.MessageEmbed().setFooter("shinne uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("shinne-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(new discord.MessageEmbed().setFooter(" shinne-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });

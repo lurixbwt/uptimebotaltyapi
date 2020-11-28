@@ -30,7 +30,7 @@ client.on("ready", () => {
     activity: {
       name: "shinne",
       type: "WATCHING",
-      url: "https://www.youtube.com/channel/UCapA9bMeL9w7tDO8J3HHhNw?view_as=subscriber"
+      url: "link koy"
     }
   });
 });

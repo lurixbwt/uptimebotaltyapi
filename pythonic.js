@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("NzgxMDgzNjEwNjg1Mzc0NDc0.X74ezA.J8e3TeMOB-yiciwTNX5b_qY3IPM");//tokeni buraya yazınız YOKSA ÇALIŞMAZ
+client.login("TOKEN YAZ");//tokeni buraya yazınız YOKSA ÇALIŞMAZ
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -28,7 +28,7 @@ client.on("ready", () => {
 
   client.user.setPresence({
     activity: {
-      name: "shinne",
+      name: "SCROW",
       type: "WATCHING",
       url: "link koy"
     }
@@ -83,12 +83,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-             return message.channel.send(new discord.MessageEmbed().setFooter("shinne uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("shinne-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+             return message.channel.send(new discord.MessageEmbed().setFooter("SCROW").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("SCROW").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter(" shinne-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(new discord.MessageEmbed().setFooter("SCROW").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });
@@ -98,7 +98,7 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "!göster") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("TAKMA MAKMA-uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
+    message.channel.send(new discord.MessageEmbed().setFooter("SCROW").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
 });
 
